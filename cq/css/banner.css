@@ -1,0 +1,58 @@
+.cq-banner {
+  position: relative;
+  height: 680px;
+  /* width: 100%; */
+  background: #051630 url(/img/banner.jpg) no-repeat center/cover;
+}
+
+.cq-ban-slider {
+  position: absolute;
+  bottom: 84px;
+  width: 115px;
+}
+
+.cq-ban-slider span {
+  width: 48px;
+  height: 3px;
+  background-color: #838a94;
+  cursor: pointer;
+}
+
+.cq-ban-slider span.slider-active {
+  background-color: #fff;
+}
+
+.cq-ban-tips {
+  position: absolute;
+  bottom: -80px;
+  padding: 24px 36px;
+  background-color: #fff;
+  box-shadow: 0 8px 8px #f1f1f1;
+}
+
+.cq-ban-tips p {
+  padding: 0 50px 0 42px;
+  font-size: 20px;
+  line-height: 70px;
+}
+
+.cq-btn-more {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #ff7200;
+  border: solid 1px #ff7200;
+  border-radius: 20px;
+}
+
+.cq-btn-more:hover {
+  text-decoration: none
+}
+
+.cq-btn-more:hover:after {
+  transform: translateX(3px);
+}

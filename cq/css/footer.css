@@ -1,0 +1,73 @@
+.cq-footer {
+  background-color: #22212f;
+  padding-top: 55px;
+}
+
+.cq-foot-content {
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.cq-foot-contact {
+  width: 229px;
+  padding: 0 60px 0 65px;
+  border-right: 1px solid #4c4f5f;
+}
+
+.cq-qr-wrap {
+  padding: 0 35px;
+}
+
+.cq-foot-qr {
+  padding: 20px 0 15px;
+}
+
+.cq-foot-connect {
+  overflow: hidden;
+  width: 804px;
+  max-height: 245px;
+  padding-left: 94px;
+}
+
+.cq-foot-connect dl {
+  width: 188px;
+}
+
+.cq-foot-connect dl dt {
+  padding-bottom: 30px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.cq-foot-connect dl dd {
+  padding-left: 3px;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+.cq-foot-connect dl a {
+  color: #cecece;
+  text-decoration: none;
+}
+
+.cq-foot-connect dl a:hover {
+  color: #ff7200;
+}
+
+.cq-foot-content:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -70px;
+  width: 1300px;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .1), #4c4f5f, rgba(0, 0, 0, .1));
+}
+
+.cq-archival {
+  text-align: center;
+  color: #7e8088;
+  font-style: 14px;
+  line-height: 60px;
+}

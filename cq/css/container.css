@@ -1,0 +1,257 @@
+.cq-con-brand {
+  padding-top: 240px;
+  padding-bottom: 148px;
+}
+
+.cq-con-title {
+  text-align: center;
+}
+
+.cq-con-list {
+  padding-top: 66px;
+}
+
+.cq-con-list li {
+  box-sizing: border-box;
+  width: 280px;
+  height: 400px;
+  background: #fff url(/img/marketing.jpg) no-repeat center/cover;
+  text-align: center;
+  transition: .3s;
+}
+
+.cq-con-list li.list-integral {
+  background-image: url(/img/integral.jpg);
+}
+
+.cq-con-list li.list-financial {
+  background-image: url(/img/financial.jpg);
+}
+
+.cq-con-list li.list-welfare {
+  background-image: url(/img/welfare.png);
+}
+
+.cq-con-list>li img {
+  padding-top: 108px;
+}
+
+.cq-con-list>li h3 {
+  padding-top: 38px;
+  line-height: 28px;
+}
+
+.cq-con-list>li p {
+  padding-top: 13px;
+  line-height: 16px;
+}
+
+.cq-con-list>li>.con-list-mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .38);
+}
+
+.cq-con-list .toggle-show {
+  display: none;
+}
+
+.cq-con-list li:hover {
+  z-index: 1;
+  position: relative;
+  transform: scale(1.15, 1.13);
+  padding: 8px 7px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, .8) inset;
+}
+
+.cq-con-list li:hover .toggle-show {
+  display: inline-block;
+}
+
+.cq-con-list li:hover .con-list-mask {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.cq-con-list li:hover .con-list-mask>p {
+  padding-bottom: 24px;
+}
+
+.cq-btn-more.btn-brand {
+  color: #fff;
+  border-color: #bac6d4;
+}
+
+.cq-btn-more.btn-brand:after {
+  /* icon 变白色 */
+  color: #fff;
+}
+
+.bg-white {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.cq-con-energize {
+  box-sizing: border-box;
+  background: #fff url(/img/bg-energize.png) no-repeat center/cover;
+  padding: 82px 0 112px;
+}
+
+.cq-energize-swiper {
+  padding-top: 69px;
+}
+
+.cq-swiper-slider {
+  padding-bottom: 68px;
+}
+
+.cq-swiper-slider>a {
+  width: 181px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0px -1px 21px 0px rgba(192, 192, 192, .35);
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  color: #333;
+}
+
+.cq-swiper-slider>a:hover {
+  color: #fff;
+  background-color: #ff7720;
+}
+
+.cq-swiper-content {
+  position: relative;
+  /* 绝对定位需要设置高度 */
+  height: 452px;
+}
+
+.cq-swiper-content ul.cq-swiper-pic li {
+  position: absolute;
+  width: 500px;
+  height: 452px;
+  background-color: #fff;
+  box-shadow: 0px -1px 21px 0px rgba(114, 113, 113, .3);
+}
+
+ul.cq-swiper-pic li:nth-of-type(1) {
+  top: 30px;
+  left: 50px;
+  width: 500px;
+  height: 391px;
+}
+
+ul.cq-swiper-pic li:nth-of-type(2) {
+  z-index: 3;
+  top: 0;
+  left: 330px;
+  width: 500px;
+  height: 452px;
+}
+
+ul.cq-swiper-pic li:nth-of-type(3) {
+  top: 30px;
+  left: 610px;
+  width: 500px;
+  height: 391px;
+}
+
+.cq-energize-swiper .cq-swiper-btn img {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.cq-energize-swiper .cq-swiper-btn:hover {
+  /* 响应反馈 */
+  opacity: .8;
+}
+
+.cq-energize-swiper .cq-swiper-btn.prev img {
+  left: -18px;
+}
+
+.cq-energize-swiper .cq-swiper-btn.next img {
+  right: -18px;
+}
+
+.cq-swiper-pic>li:nth-of-type(1)>h3 {
+  text-align: left;
+  padding-left: 36px;
+  padding-top: 93px;
+}
+
+.cq-swiper-pic>li:nth-of-type(1) img {
+  width: 169px;
+  height: auto;
+}
+
+.cq-swiper-pic>li:nth-of-type(2)>h3 {
+  padding-top: 86px;
+}
+
+.cq-swiper-pic>li:nth-of-type(3)>h3 {
+  text-align: right;
+  padding-right: 81px;
+  padding-top: 93px;
+}
+
+.cq-swiper-pic>li:nth-of-type(3) img {
+  width: 160px;
+  height: auto;
+}
+
+.cq-swiper-pic>li>p {
+  padding: 60px 40px 0;
+  text-indent: 2em;
+  /* 两端对齐 */
+  text-align: justify;
+  font-size: 14px;
+  line-height: 30px;
+  color: #666;
+
+}
+
+.cq-swiper-active:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  width: 80px;
+  height: 2px;
+  background-color: #ff7720;
+}
+
+.cq-con-banner {
+  padding: 67px 0;
+  height: 330px;
+  background: #fff url(/img/bg2.png) no-repeat center/cover;
+  text-align: center;
+  color: #fff;
+}
+
+.cq-con-banner>h2 {
+  padding-top: 34px;
+  font-size: 48px;
+  font-family: '\5B8B\4F53';
+  letter-spacing: -4px;
+  line-height: 48px;
+}
+
+.cq-con-banner>p {
+  padding: 24px 0 30px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.cq-con-banner .partition {
+  font-size: 16px;
+  padding: 0 26px;
+}
