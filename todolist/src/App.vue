@@ -2,9 +2,9 @@
     <div id="App">
     <div class="todo-container">
       <div class="todo-wrap">
-        <TdHeader />
-        <TdList />
-        <TdFooter />
+        <TdHeader :addTodo="addTodo" />
+        <TdList :todos="todos" :checkTodo="checkTodo" :delTodo="delTodo" />
+        <TdFooter :todos="todos" :checkAllTodo="checkAllTodo" :clearAllDone="clearAllDone" />
       </div>
     </div>
   </div>
@@ -21,6 +21,34 @@
       TdFooter,
       TdHeader,
       TdList
+    },
+    data() {
+      return {
+        todos: [
+          {id:'001', title:'morning-learn', done:true},
+          {id:'002', title:'afternoon-rice', done:false},
+          {id:'003', title:'evening-sleep', done:true}
+        ]
+      }
+    },
+    methods: {
+      addTodo(todo) {
+        this.todos.unshift(todo)
+      },
+      checkTodo(id) {
+        this.todos.forEach(todo => {
+          if(todo.id === id) todo.done = !todo.done
+        })
+      },
+      delTodo(id) {
+        this.todos = this.todos.filter(todo => todo.id !== id)
+      },
+      checkAllTodo(done) {
+        this.todos.forEach(todo => todo.done=done)
+      },
+      clearAllDone() {
+        this.todos = this.todos.filter(todo => !todo.done)
+      }
     }
   }
 </script>
