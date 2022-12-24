@@ -24,11 +24,8 @@
     },
     data() {
       return {
-        todos: [
-          {id:'001', title:'morning-learn', done:true},
-          {id:'002', title:'afternoon-rice', done:false},
-          {id:'003', title:'evening-sleep', done:true}
-        ]
+        // todos: [{id:'001', title:'morning-learn', done:true}]
+        todos: JSON.parse(sessionStorage.getItem("todos")) || []
       }
     },
     methods: {
@@ -48,6 +45,14 @@
       },
       clearAllDone() {
         this.todos = this.todos.filter(todo => !todo.done)
+      }
+    },
+    watch: {
+      todos: {
+        deep:true,
+        handler(value) {
+          sessionStorage.setItem("todos", JSON.stringify(value))
+        }
       }
     }
   }
