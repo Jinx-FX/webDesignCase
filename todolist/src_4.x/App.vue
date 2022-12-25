@@ -25,7 +25,7 @@
     },
     data() {
       return {
-        // todos: [{id:'001', title:'morning-learn', done:false, isEdit:false}]
+        // todos: [{id:'001', title:'morning-learn', done:true}]
         todos: JSON.parse(sessionStorage.getItem("todos")) || []
       }
     },
@@ -36,11 +36,6 @@
       checkTodo(_, id) {
         this.todos.forEach(todo => {
           if(todo.id === id) todo.done = !todo.done
-        })
-      },
-      updateTodo(id, title) {
-        this.todos.forEach(todo => {
-          if(todo.id === id) todo.title = title
         })
       },
       delTodo(_, id) {
@@ -65,14 +60,12 @@
       // this.$bus.$on('checkTodo', this.checkTodo)
       // this.$bus.$on('delTodo', this.delTodo)
       this.pubIdcheck = pubsub.subscribe('checkTodo', this.checkTodo)
-      this.$bus.$on('updateTodo', this.updateTodo)
       this.pubIddel = pubsub.subscribe('delTodo', this.delTodo)
     },
     beforeDestroy() {
       // this.$bus.$off('checkTodo')
       // this.$bus.$off('delTodo')
       pubsub.unsubscribe(this.pubIdcheck)
-      this.$bus.$off('updateTodo')
       pubsub.unsubscribe(this.pubIddel)
     },
   }
@@ -103,21 +96,9 @@
     border: 1px solid #bd362f;
   }
 
-  .btn-edit {
-    color: #fff;
-    background-color: skyblue;
-    border: 1px solid rgb(8, 67, 90);
-    margin-right: 5px;
-  }
-
   .btn-danger:hover {
     color: #fff;
     background-color: #bd362f;
-  }
-
-  .btn-edit:hover {
-    color: #fff;
-    background-color: rgb(8, 67, 90);
   }
 
   .btn:focus {

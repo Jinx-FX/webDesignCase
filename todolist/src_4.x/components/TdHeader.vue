@@ -17,8 +17,8 @@ export default {
   },
   methods: {
     add() {
-      if(!this.title.trim()) return alert("输入不能为空!")
-      const todo = {id:nanoid(), title:this.title, done:false, isEdit:false}
+      if(!this.title.trim()) return alert("输入不能为空")
+      const todo = {id:nanoid(), title:this.title, done:false}
       // this.addTodo(todo)
       this.$emit("addTodo", todo)
       this.title = ''
