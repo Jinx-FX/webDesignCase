@@ -6,7 +6,7 @@
     <span>
       <span>已完成{{doneTotal}}</span> / 全部{{total}}
     </span>
-    <button class="btn btn-danger" @click="clearAll" >清除已完成任务</button>
+    <button class="btn btn-danger" @click="clearAllDone" >清除已完成任务</button>
   </div>
 </template>
 
@@ -26,15 +26,8 @@
           return this.total === this.doneTotal && this.total > 0
         },
         set(value) {
-          // this.checkAllTodo(value)
-          this.$emit('checkAllTodo', value)
+          this.checkAllTodo(value)
         }
-      }
-    },
-    methods: {
-      clearAll() {
-        // this.clearAllDone()
-        this.$emit('clearAllDone')
       }
     },
   }

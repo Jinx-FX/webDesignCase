@@ -2,9 +2,9 @@
     <div id="App">
     <div class="todo-container">
       <div class="todo-wrap">
-        <TdHeader @addTodo="addTodo" />
+        <TdHeader :addTodo="addTodo" />
         <TdList :todos="todos" :checkTodo="checkTodo" :delTodo="delTodo" />
-        <TdFooter :todos="todos" @checkAllTodo="checkAllTodo" @clearAllDone="clearAllDone" />
+        <TdFooter :todos="todos" :checkAllTodo="checkAllTodo" :clearAllDone="clearAllDone" />
       </div>
     </div>
   </div>
