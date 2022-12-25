@@ -2,6 +2,8 @@
 
 基于 github API: https://api.github.com/search/users?q=xxx
 
+> 使用 `vue2` 基础组件化定义的一个案例
+> 
 > - **src_axios/src**   : 使用 axios 进行 ajax 请求 github 用户数据
 > - **src_vue-resource**: 使用 vue-resource 进行 ajax 请求 github 用户数据
 
