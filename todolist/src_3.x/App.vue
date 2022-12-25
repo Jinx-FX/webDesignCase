@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  import pubsub from 'pubsub-js';
   import TdFooter from './components/TdFooter'
   import TdHeader from './components/TdHeader'
   import TdList from './components/TdList'
@@ -33,12 +32,12 @@
       addTodo(todo) {
         this.todos.unshift(todo)
       },
-      checkTodo(_, id) {
+      checkTodo(id) {
         this.todos.forEach(todo => {
           if(todo.id === id) todo.done = !todo.done
         })
       },
-      delTodo(_, id) {
+      delTodo(id) {
         this.todos = this.todos.filter(todo => todo.id !== id)
       },
       checkAllTodo(done) {
@@ -57,16 +56,12 @@
       }
     },
     mounted() {
-      // this.$bus.$on('checkTodo', this.checkTodo)
-      // this.$bus.$on('delTodo', this.delTodo)
-      this.pubIdcheck = pubsub.subscribe('checkTodo', this.checkTodo)
-      this.pubIddel = pubsub.subscribe('delTodo', this.delTodo)
+      this.$bus.$on('checkTodo', this.checkTodo)
+      this.$bus.$on('delTodo', this.delTodo)
     },
     beforeDestroy() {
-      // this.$bus.$off('checkTodo')
-      // this.$bus.$off('delTodo')
-      pubsub.unsubscribe(this.pubIdcheck)
-      pubsub.unsubscribe(this.pubIddel)
+      this.$bus.$off('checkTodo')
+      this.$bus.$off('delTodo')
     },
   }
 </script>

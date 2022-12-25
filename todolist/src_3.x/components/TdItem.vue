@@ -11,21 +11,18 @@
 </template>
 
 <script>
-  import pubsub from 'pubsub-js';
   export default {
     name: "TdItem",
     props: ["todo"],
     methods: {
       handleCheck(id) {
         // this.checkTodo(id)
-        // this.$bus.$emit('checkTodo', id)
-        pubsub.publish('checkTodo', id)
+        this.$bus.$emit('checkTodo', id)
       },
       handleDelete(id) {
         if(confirm("确定删除吗？")) {
           // this.delTodo(id)
-          // this.$bus.$emit('delTodo', id)
-          pubsub.publish('delTodo', id)
+          this.$bus.$emit('delTodo', id)
         }
       }
     }
