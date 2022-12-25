@@ -13,16 +13,14 @@
 <script>
   export default {
     name: "TdItem",
-    props: ["todo"],
+    props: ["todo","checkTodo", "delTodo"],
     methods: {
       handleCheck(id) {
-        // this.checkTodo(id)
-        this.$bus.$emit('checkTodo', id)
+        this.checkTodo(id)
       },
       handleDelete(id) {
         if(confirm("确定删除吗？")) {
-          // this.delTodo(id)
-          this.$bus.$emit('delTodo', id)
+          this.delTodo(id)
         }
       }
     }

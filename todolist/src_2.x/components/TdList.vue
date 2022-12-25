@@ -1,7 +1,12 @@
 <template>
   <ul class="todo-main">
     <TdItem 
-      v-for="todo of todos" :key="todo.id" :todo="todo" />
+      v-for="todo of todos" 
+      :key="todo.id" 
+      :todo="todo" 
+      :checkTodo="checkTodo" 
+      :delTodo="delTodo" 
+    />
   </ul>
 </template>
 
@@ -11,7 +16,7 @@
   export default {
     name: "TdList",
     components: {TdItem},
-    props: ["todos"]
+    props: ["todos", "checkTodo", "delTodo"]
   }
 </script>
 

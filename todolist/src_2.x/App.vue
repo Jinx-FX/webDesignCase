@@ -3,7 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <TdHeader @addTodo="addTodo" />
-        <TdList :todos="todos" />
+        <TdList :todos="todos" :checkTodo="checkTodo" :delTodo="delTodo" />
         <TdFooter :todos="todos" @checkAllTodo="checkAllTodo" @clearAllDone="clearAllDone" />
       </div>
     </div>
@@ -54,15 +54,7 @@
           sessionStorage.setItem("todos", JSON.stringify(value))
         }
       }
-    },
-    mounted() {
-      this.$bus.$on('checkTodo', this.checkTodo)
-      this.$bus.$on('delTodo', this.delTodo)
-    },
-    beforeDestroy() {
-      this.$bus.$off('checkTodo')
-      this.$bus.$off('delTodo')
-    },
+    }
   }
 </script>
 
