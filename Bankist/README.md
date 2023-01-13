@@ -1,4 +1,4 @@
-# BankList
+# Bankist
 
 > 交互式网站
 > - by JavaScript
