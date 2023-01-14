@@ -1,4 +1,4 @@
-# Bankist
+# Bankist-Web
 
 > 交互式网站
 > - by JavaScript
