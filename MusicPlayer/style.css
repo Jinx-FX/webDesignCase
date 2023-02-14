@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: '优设标题黑';
-  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
