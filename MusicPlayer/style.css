@@ -54,7 +54,7 @@ body {
 }
 
 .shell input[type='range'] {
-  -webkit-appearance: none !important;
+  appearance: none !important;
   margin: 0px;
   padding: 0px;
   background: rgb(255, 255, 255);
@@ -67,7 +67,7 @@ body {
 }
 
 .shell input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
+  appearance: none !important;
   background: #ff3677;
   height: 5px;
   width: 5px;
@@ -76,6 +76,7 @@ body {
 }
 
 .shell input[type='range']::-moz-range-thumb {
+  appearance: none !important;
   background: #ff3677;
   height: 8px;
   width: 8px;
@@ -83,7 +84,7 @@ body {
 }
 
 .shell input[type='range']::-ms-thumb {
-  -webkit-appearance: none !important;
+  appearance: none !important;
   background: #ff3677;
   height: 8px;
   width: 8px;
