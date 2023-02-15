@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JS + 懒加载方法</title>
+  <meta charset="utf-8" name="viewport" content="initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="./reset2.0.min.css">
+</head>
+
+<body>
+  <ul id="waterfall">
+    <li>
+      <div><img src="https://picsum.photos/640/200/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/360/640/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/480/720/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/480/640/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/360/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/360/520/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/520/360/?random"></div>
+    </li>
+    <li>
+      <div><img src="https://picsum.photos/720/640/?random"></div>
+    </li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="./newWaterfall_jquery.js"></script>
+  <script src="./newWaterfall.js"></script>
+  <script type="text/javascript">
+    // 文档加载完毕后执行
+    $(document).ready(function () {
+      $("#waterfall").NewWaterfall({
+        // width: 360,
+        // delay: 100
+      })
+    })
+    // 自动加载更多
+    function random (min, max) {
+      return min + Math.floor(Math.random() * (max - min + 1))
+    }
+    let loading = false
+    let dist = 500
+    let num = 1
+    setInterval(function () {
+      if (
+        $(window).scrollTop() >= $(document).height() - $(window).height() - dist &&
+        !loading
+      ) {
+        // 表示开始加载
+        loading = true
+        // 加载内容
+        $("#waterfall").append(
+          "<li><div style='height:" + random(50, 300) + "px'>" + num + "</div></li>"
+        )
+        num++
+        // 表示加载结束
+        loading = false
+      }
+    }, 60);
+  </script>
+</body>
+
+</html>
