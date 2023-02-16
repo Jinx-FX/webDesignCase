@@ -1,31 +1,39 @@
 const waterfall = document.querySelector("#waterfall")
-const pics = document.querySelectorAll("li")
 
-const newWaterfall = (options = {
-  width: 360,
-  delay: 100,
-  repeatShow: false
-}) => {
+const newWaterfall = (options) => {
+
+  // 参数
+  let defaults = {
+    width: 360,
+    delay: 100,
+    repeatShow: false
+  }
+
+  let config = defaults
 
   // 功能
   const show = (pic) => {
     if (getScrollTop() + getClient().height > pic.offsetHeight) {
       pic.classList.add("show")
     } else {
-      if (options.repeatShow) {
+      if (config.repeatShow) {
         pic.classList.remove("show")
       }
     }
   }
 
   const refresh = () => {
-    let pics_col = parseInt(getClient().width / options.width)
+    const pics = document.querySelectorAll("li")
+
+    if (pics.length <= 0) return
+
+    let pics_col = parseInt(getClient().width / config.width)
 
     if (pics.length < pics_col) {
       pics_col = pics.length
     }
 
-    let pic_left = (getClient().width - pics_col * options.width) / 2
+    let pic_left = (getClient().width - pics_col * config.width) / 2
 
     // 基础样式设置
     waterfall.style.position = "relative"
@@ -41,11 +49,11 @@ const newWaterfall = (options = {
       // 初始化列表,基础样式设置 pic
       for (let i = 0; i < pics.length; i++) {
         pics[i].style.position = "absolute"
-        pics[i].style.width = options.width + "px"
+        pics[i].style.width = config.width + "px"
         list.push({
           index: i,
           bottom: 0,
-          height: pics[i].offsetHeight + "px"
+          height: pics[i].offsetHeight
         })
       }
 
@@ -79,7 +87,7 @@ const newWaterfall = (options = {
       for (let i = 0; i < nlist.length; i++) {
         for (let j = 0; j < nlist[i].length; j++) {
           pics[nlist[i][j]["index"]].style.left =
-            i * options.width + pic_left + "px"
+            i * config.width + pic_left + "px"
           pics[nlist[i][j]["index"]].style.top =
             nlist[i][j]["bottom"] - nlist[i][j]["height"] + "px"
         }
@@ -87,7 +95,7 @@ const newWaterfall = (options = {
 
       // 设置最大高度
       for (let i = 0; i < nlist.length; i++) {
-        let h = nlist[i][nlist[i].length - 1]["bottom"] + "px"
+        let h = nlist[i][nlist[i].length - 1]["bottom"]
         if (maxHeight < h) {
           maxHeight = h
         }
@@ -95,17 +103,15 @@ const newWaterfall = (options = {
       waterfall.style.height = maxHeight + "px"
     }
 
-
     // 显示列表
     for (let i = 0; i < pics.length; i++) {
       show(pics[i])
     }
-
   }
 
   // 刷新
   refresh()
-  setInterval(refresh, options.delay)
+  setInterval(refresh, config.delay)
 }
 
 // 文档加载完毕后执行
@@ -123,15 +129,15 @@ let dist = 500
 let num = 1
 setInterval(() => {
   if (
-    getScrollTop() >= scrollHeight - getClient.height - dist &&
+    getScrollTop() >= document.documentElement.offsetHeight - getClient().height - dist &&
     !loading
   ) {
     // 表示开始加载
     loading = true
     // 加载内容
-    waterfall.append(
-      "<li><div style='height:" + random(50, 300) + "px'>" + num + "</div></li>"
-    )
+    let item = document.createElement('li')
+    item.innerHTML = "<div style='height:" + random(50, 300) + "px'>" + num + "</div>"
+    waterfall.append(item)
     num++
     // 表示加载结束
     loading = false
@@ -149,10 +155,3 @@ const getClient = () => {
 const getScrollTop = () => {
   return window.pageYOffset || document.documentElement.scrollTop
 }
-
-// document height
-let scrollHeight = Math.max(
-  document.body.scrollHeight, document.documentElement.scrollHeight,
-  document.body.offsetHeight, document.documentElement.offsetHeight,
-  document.body.clientHeight, document.documentElement.clientHeight
-)
