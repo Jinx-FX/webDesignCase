@@ -130,3 +130,34 @@
     setInterval(refresh, config.delay)
   }
 })()
+
+// 文档加载完毕后执行
+$(document).ready(function () {
+  $("#waterfall").NewWaterfall({
+    // width: 360,
+    // delay: 100
+  })
+})
+// 自动加载更多
+function random (min, max) {
+  return min + Math.floor(Math.random() * (max - min + 1))
+}
+let loading = false
+let dist = 500
+let num = 1
+setInterval(function () {
+  if (
+    $(window).scrollTop() >= $(document).height() - $(window).height() - dist &&
+    !loading
+  ) {
+    // 表示开始加载
+    loading = true
+    // 加载内容
+    $("#waterfall").append(
+      "<li><div style='height:" + random(50, 300) + "px'>" + num + "</div></li>"
+    )
+    num++
+    // 表示加载结束
+    loading = false
+  }
+}, 60)
