@@ -11,5 +11,6 @@
 - [Stars](https://github.com/Jinx-FX/webDesignCase/tree/main/Stars) : 基于 [threejs](https://github.com/mrdoob/three.js) 建立的一个宇宙星辰 demo
 - [Mapty-App](https://github.com/Jinx-FX/webDesignCase/tree/main/Mapty-App) : 基于 `leaflet.js` 的地图交互式应用
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : 音乐播放器 `demo`
+- [WaterfallLayout](https://github.com/Jinx-FX/webDesignCase/tree/main/WaterfallLayout) : 瀑布流布局
 
 

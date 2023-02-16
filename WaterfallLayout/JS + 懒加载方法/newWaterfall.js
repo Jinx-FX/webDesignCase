@@ -101,6 +101,8 @@ const newWaterfall = (options) => {
         }
       }
       waterfall.style.height = maxHeight + "px"
+    } else {
+      waterfall.classList.add("min")
     }
 
     // 显示列表
