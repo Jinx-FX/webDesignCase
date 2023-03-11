@@ -13,4 +13,4 @@
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : 音乐播放器 `demo`
 - [WaterfallLayout](https://github.com/Jinx-FX/webDesignCase/tree/main/WaterfallLayout) : 瀑布流布局
 
-
+- [react-timer-demo](https://github.com/Jinx-FX/webDesignCase/tree/main/react-timer-demo) : 模拟抢购倒计时及提交处理
