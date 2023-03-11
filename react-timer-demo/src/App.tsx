@@ -4,27 +4,39 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState('10s')
+
   useEffect(() => {
     let num = 10
-    let timeId = setTimeout(function go() {
-      if (parseInt(count) > 0) {
-        setTimeout(go, 1000)
+
+    // by setTimeout
+    // let timerId = setTimeout(function go() {
+    //   if (parseInt(count) > 0) {
+    //     setTimeout(go, 1000)
+    //   }
+    //   if (count == '已抢购') {
+    //     console.log('111')
+    //     num = -1
+    //     clearTimeout(timeId)
+    //   } else if (num === 0) {
+    //     console.log('333')
+    //     clearTimeout(timeId)
+    //     num--
+    //     setCount('抢购')
+    //   } else if (num > 0) {
+    //     setCount(num-- + 's')
+    //     console.log('222')
+    //   }
+    // }, 1000)
+
+    // by setInterval
+    const timerId = setInterval(function () {
+      if (num == 0) {
+        clearInterval(timerId)
       }
-      if (count === '已抢购') {
-        console.log('111')
-        num = -1
-        clearTimeout(timeId)
-      } else if (num === 0) {
-        console.log('333')
-        clearTimeout(timeId)
-        num--
-        setCount('抢购')
-      } else if (num > 0) {
-        setCount(num-- + 's')
-        console.log('222')
-      }
+      setCount(num-- + 's')
     }, 1000)
-    timeId
+
+    timerId
   }, [])
 
   const onSumbit = () => {
