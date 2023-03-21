@@ -14,3 +14,4 @@
 - [WaterfallLayout](https://github.com/Jinx-FX/webDesignCase/tree/main/WaterfallLayout) : 瀑布流布局
 
 - [react-timer-demo](https://github.com/Jinx-FX/webDesignCase/tree/main/react-timer-demo) : 模拟抢购倒计时及提交处理
+- [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : canvas -> 鼠标跟随
