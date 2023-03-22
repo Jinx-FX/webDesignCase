@@ -1,3 +1,5 @@
+// 作者：山羊の前端小窝 https://www.bilibili.com/read/cv20875146?spm_id_from=333.999.0.0 出处：bilibili
+
 // 定义requestAnimFrame函数
 window.requestAnimFrame = function () {
   // 检查浏览器是否支持requestAnimFrame函数
@@ -37,8 +39,8 @@ window.onload = function () {
   let c = init("canvas").c,
     canvas = init("canvas").canvas,
     // 设置canvas的宽度为窗口内宽度，高度为窗口内高度
-    w = canvas.width = window.innerWidth,
-    h = canvas.height = window.innerHeight,
+    w = (canvas.width = window.innerWidth),
+    h = (canvas.height = window.innerHeight),
     // 初始化鼠标对象
     mouse = { x: false, y: false },
     last_mouse = {}
@@ -48,10 +50,10 @@ window.onload = function () {
     return Math.sqrt(Math.pow(p2x - p1x, 2) + Math.pow(p2y - p1y, 2))
   }
 
-  // 定义 Segment 类
-  class Segment {
+  // 定义 segment 类
+  class segment {
     // 构造函数，用于初始化 segment 对象
-    constructor(parent, len, ang, first) {
+    constructor(parent, l, a, first) {
       // 如果是第一条触手段，则位置坐标为触手顶部位置
       // 否则位置坐标为上一个segment对象的nextPos坐标
       this.first = first
@@ -67,12 +69,12 @@ window.onload = function () {
         }
       }
       // 设置segment的长度和角度
-      this.len = len
-      this.ang = ang
+      this.l = l
+      this.ang = a
       // 计算下一个segment的坐标位置
       this.nextPos = {
-        x: this.pos.x + this.len * Math.cos(this.ang),
-        y: this.pos.y + this.len * Math.sin(this.ang),
+        x: this.pos.x + this.l * Math.cos(this.ang),
+        y: this.pos.y + this.l * Math.sin(this.ang),
       }
     }
     // 更新segment位置的方法
@@ -80,19 +82,19 @@ window.onload = function () {
       // 计算segment与目标点的角度
       this.ang = Math.atan2(t.y - this.pos.y, t.x - this.pos.x)
       // 根据目标点和角度更新位置坐标
-      this.pos.x = t.x + this.len * Math.cos(this.ang - Math.PI)
-      this.pos.y = t.y + this.len * Math.sin(this.ang - Math.PI)
+      this.pos.x = t.x + this.l * Math.cos(this.ang - Math.PI)
+      this.pos.y = t.y + this.l * Math.sin(this.ang - Math.PI)
       // 根据新的位置坐标更新nextPos坐标
-      this.nextPos.x = this.pos.x + this.len * Math.cos(this.ang)
-      this.nextPos.y = this.pos.y + this.len * Math.sin(this.ang)
+      this.nextPos.x = this.pos.x + this.l * Math.cos(this.ang)
+      this.nextPos.y = this.pos.y + this.l * Math.sin(this.ang)
     }
     // 将 segment 回执回初始位置的方法
     fallback (t) {
       // 将位置坐标设置为目标点坐标
       this.pos.x = t.x
       this.pos.y = t.y
-      this.nextPos.x = this.pos.x + this.len * Math.cos(this.ang)
-      this.nextPos.y = this.pos.y + this.len * Math.sin(this.ang)
+      this.nextPos.x = this.pos.x + this.l * Math.cos(this.ang)
+      this.nextPos.y = this.pos.y + this.l * Math.sin(this.ang)
     }
     show () {
       c.lineTo(this.nextPos.x, this.nextPos.y)
@@ -100,14 +102,14 @@ window.onload = function () {
   }
 
   // 定义 tentacle 类
-  class Tentacle {
+  class tentacle {
     // 构造函数，用于初始化 tentacle 对象
-    constructor(x, y, len, n, ang) {
+    constructor(x, y, l, n, a) {
       // 设置触手的顶部位置坐标
       this.x = x
       this.y = y
       // 设置触手的长度
-      this.len = len
+      this.l = l
       // 设置触手的段数
       this.n = n
       // 初始化触手的目标点对象
@@ -115,24 +117,24 @@ window.onload = function () {
       // 设置触手的随机移动参数
       this.rand = Math.random()
       // 创建触手的第一条段
-      this.segments = [new Segment(this, this.len / this.n, 0, true)]
+      this.segments = [new segment(this, this.l / this.n, 0, true)]
       // 创建其他的段
       for (let i = 1; i < this.n; i++) {
         this.segments.push(
-          new Segment(this.segments[i - 1], this.len / this.n, 0, false)
+          new segment(this.segments[i - 1], this.l / this.n, 0, false)
         )
       }
     }
     // 移动触手到目标点的方法
     move (last_target, target) {
       // 计算触手顶部与目标点的角度
-      this.ang = Math.atan2(target.y - this.y, target.x - this.x)
+      this.angle = Math.atan2(target.y - this.y, target.x - this.x)
       // 计算触手的距离参数
       this.dt = dist(last_target.x, last_target.y, target.x, target.y)
       // 计算触手的目标点坐标
       this.t = {
-        x: target.x - 0.8 * this.dt * Math.cos(this.ang),
-        y: target.y - 0.8 * this.dt * Math.sin(this.ang)
+        x: target.x - 0.8 * this.dt * Math.cos(this.angle),
+        y: target.y - 0.8 * this.dt * Math.sin(this.angle)
       }
       // 如果计算出了目标点，则更新最后一个segment对象的位置坐标
       // 否则，更新最后一个segment对象的位置坐标为目标点坐标
@@ -147,7 +149,7 @@ window.onload = function () {
       }
       if (
         dist(this.x, this.y, target.x, target.y) <=
-        this.len + dist(last_target.x, last_target.y, target.x, target.y)
+        this.l + dist(last_target.x, last_target.y, target.x, target.y)
       ) {
         this.segments[0].fallback({ x: this.x, y: this.y })
         for (let i = 1; i < this.n; i++) {
@@ -157,7 +159,7 @@ window.onload = function () {
     }
     show (target) {
       // 如果触手与目标点的距离小于触手的长度，则回执触手
-      if (dist(this.x, this.y, target.x, target.y) <= this.len) {
+      if (dist(this.x, this.y, target.x, target.y) <= this.l) {
         // 设置全局合成操作为lighter
         c.globalCompositeOperation = "lighter"
         // 开始新路径
@@ -184,12 +186,12 @@ window.onload = function () {
       }
     }
     // 绘制触手的圆形头的方法
-    show_round (target) {
+    show2 (target) {
       // 开始新路径
       c.beginPath()
       // 如果触手与目标点的距离小于触手的长度，则回执白色的圆形
       // 否则绘制青色的圆形
-      if (dist(this.x, this.y, target.x, target.y) <= this.len) {
+      if (dist(this.x, this.y, target.x, target.y) <= this.l) {
         c.arc(this.x, this.y, 2 * this.rand + 1, 0, 2 * Math.PI)
         c.fillStyle = "whith"
       } else {
@@ -201,8 +203,8 @@ window.onload = function () {
     }
   }
   // 初始化变量
-  let maxlen = 400,//触手的最大长度
-    minlen = 50,//触手的最小长度
+  let maxl = 400,//触手的最大长度
+    minl = 50,//触手的最小长度
     n = 30,//触手的段数
     numt = 600,//触手的数量
     tent = [],//触手的数组
@@ -215,10 +217,10 @@ window.onload = function () {
   // 创建触手对象
   for (let i = 0; i < numt; i++) {
     tent.push(
-      new Tentacle(
+      new tentacle(
         Math.random() * w,//触手的横坐标
         Math.random() * h,//触手的纵坐标
-        Math.random() * (maxlen - minlen) + minlen,//触手的长度
+        Math.random() * (maxl - minl) + minl,//触手的长度
         n,//触手的段数
         Math.random() * 2 * Math.PI,//触手的角度
       )
@@ -264,12 +266,12 @@ window.onload = function () {
     c.fill()
 
     // 绘制所有触手的中心点
-    for (let i = 0; i < numt; i++) {
+    for (i = 0; i < numt; i++) {
       tent[i].move(last_target, target)
-      tent[i].show_round(target)
+      tent[i].show2(target)
     }
     // 绘制所有触手
-    for (let i = 0; i < numt; i++) {
+    for (i = 0; i < numt; i++) {
       tent[i].show(target)
     }
     // 更新上一个触手的目标点坐标
@@ -292,7 +294,7 @@ window.onload = function () {
   window.addEventListener("resize", function () {
     // 重置canvas的大小
     w = canvas.width = window.innerWidth
-    h = canvas.height = window.innerHeight
+    w = canvas.height = window.innerHeight
 
     // 循环执行回执动画的函数
     loop()
@@ -303,52 +305,15 @@ window.onload = function () {
   // 使用setInterval函数循环
   setInterval(loop, 1000 / 60)
 
-  //鼠标不动的时候在范围内随机移动
-  function randomMove (mouse, center_mouse) {
-    mouse.x = center_mouse.x + 50 - Math.random(0, 1) * 100
-    mouse.y = center_mouse.y + 50 - Math.random(0, 1) * 100
-  }
-  //随机移动的定时器
-  //随机移动使移动过程更仿真
-  let timer1 = null
-  //触发随机移动后 保留随机移动的中心坐标
-  let center_mouse = {
-    x: 0,
-    y: 0
-  }
-  //鼠标移动监听的定时器 用于防抖
-  //中间的抖动时间模拟 发现猎物（鼠标）的时间
-  let timer2 = null
-
   // 监听鼠标移动事件
   canvas.addEventListener("mousemove", function (e) {
-    if (timer2 == null)
-      timer2 = setTimeout(() => {
-        // 记录上一次的鼠标位置
-        last_mouse.x = mouse.x
-        last_mouse.y = mouse.y
+    // 记录上一次的鼠标位置
+    last_mouse.x = mouse.x
+    last_mouse.y = mouse.y
 
-        // 更新点前的鼠标位置
-        mouse.x = e.pageX - this.offsetLeft
-        mouse.y = e.pageY - this.offsetTop
-
-        if (timer1 == null)
-          timer1 = setInterval(() => { randomMove(mouse, center_mouse) }, 100)
-
-        //距离上一个点移动的直线距离小于50的时候 不移动
-        if (Math.pow(mouse.x - last_mouse.x, 2) + Math.pow(mouse.y - last_mouse.y, 2) <= 2500) {
-          center_mouse.x = last_mouse.x
-          center_mouse.y = last_mouse.y
-        }
-        else {
-          //保留新的中心位置 用于下一次随机移动
-          center_mouse.x = mouse.x
-          center_mouse.y = mouse.y
-        }
-
-        clearTimeout(timer2)
-        timer2 = null
-      }, 100)
+    // 更新点前的鼠标位置
+    mouse.x = e.pageX - this.offsetLeft
+    mouse.y = e.pageY - this.offsetTop
   }, false)
 
   // 监听鼠标离开事件
@@ -356,10 +321,5 @@ window.onload = function () {
     // 将mouse设为false
     mouse.x = false
     mouse.y = false
-    //清理定时器
-    clearInterval(timer1)
-    clearTimeout(timer2)
-    timer1 = null
-    timer2 = null
   })
 } 
