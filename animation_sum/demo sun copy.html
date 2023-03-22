@@ -1,0 +1,234 @@
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    body {
+      background-color: #21223a;
+    }
+
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .sun {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #fffaa9;
+      box-shadow: 0 0 60px #ffcfa9, 0 0 100px #b9a018;
+    }
+
+    .sun .eye {
+      position: absolute;
+      top: 60px;
+      left: 30px;
+      width: 24px;
+      height: 12px;
+      background-color: #ffcfa9;
+      transform: scale(1.5);
+      border-radius: 24px 24px 0 0;
+      animation: eye-move 2s infinite;
+    }
+
+    .sun .eye:after {
+      position: absolute;
+      content: '';
+      top: 3px;
+      left: 0;
+      width: 24px;
+      height: 12px;
+      background-color: #fffaa9;
+      transform: scale(.9);
+      border-radius: 24px 24px 0 0;
+    }
+
+    .sun .eye.right-eye {
+      left: 90px;
+    }
+
+    .eyelash {
+      width: 3px;
+      height: 9px;
+      background-color: #ffcfa9;
+      border-radius: 50%;
+      transform: translate(0, 1px) rotate(-45deg);
+    }
+
+    .eyelash:after {
+      position: absolute;
+      content: '';
+      width: 3px;
+      height: 9px;
+      background-color: #ffcfa9;
+      border-radius: 50%;
+      transform: translate(3px, 1px) rotate(-2deg);
+    }
+
+    .right-eye .eyelash {
+      transform: translate(17px, -1px) rotate(45deg);
+    }
+
+    .rays {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      animation: autogiration 3s linear infinite alternate;
+    }
+
+    .beam {
+      position: absolute;
+      width: 40px;
+      height: 110px;
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), #ffcfa9 40%, #ffcfa9);
+      border-radius: 50% 50% 0 0;
+      transform: translate(-40px, -40px) rotate(120deg);
+      opacity: .03;
+    }
+
+    .beam:nth-of-type(odd) {
+      width: 30px;
+    }
+
+
+    .beam:nth-of-type(2) {
+      transform: translate(24px, -80px) rotate(163deg);
+    }
+
+    .beam:nth-of-type(3) {
+      transform: translate(90px, -80px) rotate(190deg);
+    }
+
+    .beam:nth-of-type(4) {
+      transform: translate(155px, -40px) rotate(230deg);
+    }
+
+    .beam:nth-of-type(5) {
+      transform: translate(170px, 40px) rotate(280deg);
+    }
+
+    .beam:nth-of-type(6) {
+      transform: translate(130px, 100px) rotate(310deg);
+    }
+
+    .beam:nth-of-type(7) {
+      transform: translate(51px, 128px) rotate(358deg);
+    }
+
+    .beam:nth-of-type(8) {
+      transform: translate(170px, 40px) rotate(280deg);
+    }
+
+    .beam:nth-of-type(9) {
+      transform: translate(-26px, 95px) rotate(406deg);
+    }
+
+    .beam:nth-of-type(10) {
+      transform: translate(-64px, 28px) rotate(452deg);
+    }
+
+    .earth {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #6fd4dd;
+      border-radius: 50%;
+      box-shadow: 0 0 60px #6fd4dd, 0 0 8px #076344 inset, 0 0 16px 3px rgb(42, 104, 219) inset;
+      transform: rotate(1deg);
+      transform-origin: 95px -124px;
+    }
+
+    .earth:before,
+    .earth:after {
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 3px 4px 8px 2px;
+      background-color: rgba(12, 189, 50, 0.3);
+    }
+
+    .earth:after {
+      left: 19px;
+      top: 12px;
+      border-radius: 9px 4px 8px 2px;
+      background-color: rgba(23, 133, 206, 0.3);
+    }
+
+
+    @keyframes eye-move {
+      0% {
+        transform: scale(1.5) translate(0);
+      }
+
+      50% {
+        transform: scale(1.5) translate(10px);
+      }
+
+      100% {
+        transform: scale(1.5) translate(0);
+      }
+    }
+
+    @keyframes autogiration {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(720deg);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="sun">
+      <div class="eye left-eye">
+        <div class="eyelash"></div>
+      </div>
+      <div class="eye right-eye">
+        <div class="eyelash"></div>
+      </div>
+      <div class="rays">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+      </div>
+    </div>
+    <div class="earth"></div>
+  </div>
+</body>
+
+</html>
