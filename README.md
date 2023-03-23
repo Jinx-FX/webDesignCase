@@ -15,3 +15,4 @@
 
 - [react-timer-demo](https://github.com/Jinx-FX/webDesignCase/tree/main/react-timer-demo) : 模拟抢购倒计时及提交处理
 - [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : canvas -> 鼠标跟随
+- [animation_sum](https://github.com/Jinx-FX/webDesignCase/tree/main/animation_sum) : animation -> 太阳与地球
