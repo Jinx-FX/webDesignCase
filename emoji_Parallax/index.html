@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>emoji_Parallax</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <ul id="emoji">
+    <li class="layer" data-depth="0.2">
+      <div class="face"></div>
+    </li>
+    <li class="layer" data-depth="0.3">
+      <div class="shine"></div>
+    </li>
+    <li class="layer" data-depth="0.8">
+      <div class="eye left"></div>
+    </li>
+    <li class="layer" data-depth="0.8">
+      <div class="eye right"></div>
+    </li>
+    <li class="layer" data-depth="0.8">
+      <div class="mouth"></div>
+    </li>
+  </ul>
+  <!-- 导入Parallax视差插件 -->
+  <!-- Parallax.js 是一款功能非常强大的 JavaScript 视觉差特效引擎插件。
+  通过这个视觉差插件可以制作出非常炫酷的视觉差特效。
+  它可以检测智能设备的方向。 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
+  <script>
+    var options = {
+      invertX: false,   // 水平方向反转
+      invertY: false,   // 垂直方向反转
+      limitX: 40,   // 水平方向限制
+      limitY: 40// 垂直方向限制
+    }
+    var emoji = document.getElementById('emoji')  // 获取元素id为emoji的DOM对象
+    var parallax = new Parallax(emoji, options)   // 创建新的视差对象并传入emoji和options参数
+  </script>
+</body>
+
+</html>
