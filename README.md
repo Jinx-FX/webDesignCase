@@ -12,6 +12,7 @@
 - [WaterfallLayout](https://github.com/Jinx-FX/webDesignCase/tree/main/WaterfallLayout) : 瀑布流布局
 - [animation_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/animation_sun) : `animation` -> 太阳与地球
 - [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : `canvas` -> 鼠标跟随
+- [img_move](https://github.com/Jinx-FX/webDesignCase/tree/main/img_move) : `js` 实现鼠标点击拖拽 
 
 **结合第三方库：**
 
