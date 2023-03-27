@@ -14,6 +14,7 @@
 - [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : `canvas` -> 鼠标跟随
 - [img_move](https://github.com/Jinx-FX/webDesignCase/tree/main/img_move) : `js` 实现鼠标点击拖拽 
 - [canvas_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/canvas_sun) : `canvas` -> 太阳、地球和月亮转动
+- [physics_ball](https://github.com/Jinx-FX/webDesignCase/tree/main/physics_ball) : `canvas` -> 一个小球的自由落体的运动
 
 **结合第三方库：**
 
