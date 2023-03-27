@@ -13,12 +13,13 @@
 - [animation_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/animation_sun) : `animation` -> 太阳与地球
 - [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : `canvas` -> 鼠标跟随
 - [img_move](https://github.com/Jinx-FX/webDesignCase/tree/main/img_move) : `js` 实现鼠标点击拖拽 
+- [canvas_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/canvas_sun) : `canvas` -> 太阳、地球和月亮转动
 
 **结合第三方库：**
 
 - [Stars](https://github.com/Jinx-FX/webDesignCase/tree/main/Stars) : 基于 [`threejs`](https://github.com/mrdoob/three.js) 建立的一个宇宙星辰 demo
 - [Mapty-App](https://github.com/Jinx-FX/webDesignCase/tree/main/Mapty-App) : 基于 `leaflet.js` 的地图交互式应用
-- [emoji_Parallax](https://github.com/Jinx-FX/webDesignCase/tree/main/emoji_Parallax) : 基于 `Parallax.js` emoji 交互demo
+- [emoji_Parallax](https://github.com/Jinx-FX/webDesignCase/tree/main/emoji_Parallax) : 结合 `Parallax.js` 构建的 emoji 交互demo
 
 **React 相关：**
 
