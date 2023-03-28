@@ -16,6 +16,7 @@
 - [canvas_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/canvas_sun) : `canvas` -> 太阳、地球和月亮转动
 - [physics_ball](https://github.com/Jinx-FX/webDesignCase/tree/main/physics_ball) : `canvas` -> 一个小球的自由落体的运动
 - [scratch_card](https://github.com/Jinx-FX/webDesignCase/tree/main/scratch_card) : `canvas` -> 刮刮乐小游戏
+- [website_background](https://github.com/Jinx-FX/webDesignCase/tree/main/website_background) : `canvas` -> 网页背景：随机粒子
 
 **结合第三方库：**
 
