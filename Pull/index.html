@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    header,
+    footer {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      left: 0;
+      text-align: center;
+      line-height: 40px;
+      background: #999999;
+      color: #ffffff;
+      z-index: 999;
+    }
+
+    header {
+      top: 0;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    ul {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      overflow: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul>li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-indent: 20px;
+      border-bottom: 1px solid #666666;
+      background: #ffffff;
+      color: #333333;
+    }
+
+    /* 下拉刷新的时候做 */
+    .loading {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #333333;
+      transition: all 0.5s;
+      z-index: 1;
+      color: #ffffff;
+      background: orange;
+      top: 0;
+    }
+
+    .loadEnd {
+      background: green;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    我是头部
+  </header>
+  <section id="con">
+    <div id="loadStart" class="loading">加载中......</div>
+    <ul id="list"></ul>
+    <div id="loadEnd" class="loading loadEnd">已加载全部数据</div>
+  </section>
+  <footer>
+    我是尾部
+  </footer>
+</body>
+
+<script src="./script.js"></script>
+
+</html>

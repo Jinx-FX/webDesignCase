@@ -9,16 +9,24 @@
 - [BankList-Web](https://github.com/Jinx-FX/webDesignCase/tree/main/Bankist-Web) : 基于原生 `js` 的交互式网页
 - [Bankist-App](https://github.com/Jinx-FX/webDesignCase/tree/main/Bankist-App) : 基于原生 `js` 的交互式应用
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : `video` -> 音乐播放器 `demo`
+
+
+**布局和组件：**
+
 - [WaterfallLayout](https://github.com/Jinx-FX/webDesignCase/tree/main/WaterfallLayout) : 瀑布流布局
+- [grid-pic](https://github.com/Jinx-FX/webDesignCase/tree/main/grid-pic) : `grid background-size background-position` -> 网格图片
+- [img_move](https://github.com/Jinx-FX/webDesignCase/tree/main/img_move) : `js` 实现鼠标点击拖拽 
+- [Pull](https://github.com/Jinx-FX/webDesignCase/tree/main/Pull) : 原生 `JS` 实现下拉刷新、上拉加载
+
+**canvas 和 animaton：**
+
 - [animation_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/animation_sun) : `animation` -> 太阳与地球
 - [mouse_chase](https://github.com/Jinx-FX/webDesignCase/tree/main/mouse_chase) : `canvas` -> 鼠标跟随
-- [img_move](https://github.com/Jinx-FX/webDesignCase/tree/main/img_move) : `js` 实现鼠标点击拖拽 
 - [canvas_sun](https://github.com/Jinx-FX/webDesignCase/tree/main/canvas_sun) : `canvas` -> 太阳、地球和月亮转动
 - [physics_ball](https://github.com/Jinx-FX/webDesignCase/tree/main/physics_ball) : `canvas` -> 一个小球的自由落体的运动
 - [scratch_card](https://github.com/Jinx-FX/webDesignCase/tree/main/scratch_card) : `canvas` -> 刮刮乐小游戏
 - [website_background](https://github.com/Jinx-FX/webDesignCase/tree/main/website_background) : `canvas` -> 网页背景：随机粒子
 - [Slideshow](https://github.com/Jinx-FX/webDesignCase/tree/main/Slideshow) : `animation` -> 卡片自动轮播(3D)
-- [grid-pic](https://github.com/Jinx-FX/webDesignCase/tree/main/grid-pic) : `grid background-size background-position` -> 网格图片
 
 **结合第三方库：**
 
