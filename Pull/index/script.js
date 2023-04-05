@@ -68,6 +68,9 @@ window.onload = () => {
     }
     //距离
     let diffValue = contentH - listH
+    console.log(this.scrollTop, diffValue)
+
+    // 上滑加载
     //ul离顶部的距离
     //距离视窗还有50的时候，开始触发；
     if (this.scrollTop + 50 >= diffValue) {

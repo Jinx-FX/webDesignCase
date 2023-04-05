@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pulldown</title>
+  <style>
+    ul {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      overflow: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul>li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-indent: 20px;
+      border-bottom: 1px solid #666666;
+      background: #ffffff;
+      color: #333333;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <ul id="refreshContainer">
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      ...
+    </ul>
+    <p class="refreshText"></p>
+  </main>
+  <script>
+    (function (window) {
+      // // 获取当前滚动条的位置 
+      // function getScrollTop () {
+      //   var scrollTop = 0
+      //   if (document.documentElement && document.documentElement.scrollTop) {
+      //     scrollTop = document.documentElement.scrollTop
+      //   } else if (document.body) {
+      //     scrollTop = document.body.scrollTop
+      //   }
+      //   return scrollTop
+      // }
+
+      // // 获取当前可视范围的高度 
+      // function getClientHeight () {
+      //   var clientHeight = 0
+      //   if (document.body.clientHeight && document.documentElement.clientHeight) {
+      //     clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight)
+      //   }
+      //   else {
+      //     clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+      //   }
+      //   return clientHeight
+      // }
+
+      // // 获取文档完整的高度 
+      // function getScrollHeight () {
+      //   return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
+      // }
+
+      // 上拉加载更多数据是在页面滚动时触发的动作，一般是页面滚动到底部时触发，也可以选择在滚动到一定位置的时候触发。
+
+      // 以滚动到页面底部为例:
+      // 实现原理是分别获得当前滚动条的scrollTop值、当前可视范围的高度值clientHeight以及文档的总高度contentH。
+      // 当scrollTop和clientHeight的值之和大于等于contentH时，触发callback。
+      var _text = document.querySelector('.refreshText'),
+        _container = document.getElementById('refreshContainer')
+
+      // 节流函数
+      var throttle = function (method, context) {
+        clearTimeout(method.tId)
+        method.tId = setTimeout(function () {
+          method.call(context)
+        }, 300)
+      }
+
+      function fetchData () {
+        setTimeout(function () {
+          _container.insertAdjacentHTML('beforeend', '<li>new add...</li>')
+        }, 1000)
+      }
+
+      _container.onscroll = function () {
+        //ul的高度 不变的 定死的
+        let listH = _container.clientHeight
+        //所有li总高度
+        let contentH = this.childNodes.length * 41
+        //距离
+        let diffValue = contentH - listH
+        console.log(_container.scrollTop, diffValue)
+
+        if (_container.scrollTop + 1250 >= diffValue) {
+          _text.innerText = '加载中...'
+          throttle(fetchData)
+        }
+      }
+
+    })(window);
+  </script>
+</body>
+
+</html>
