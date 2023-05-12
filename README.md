@@ -9,7 +9,7 @@
 - [BankList-Web](https://github.com/Jinx-FX/webDesignCase/tree/main/Bankist-Web) : 基于原生 `js` 的交互式网页
 - [Bankist-App](https://github.com/Jinx-FX/webDesignCase/tree/main/Bankist-App) : 基于原生 `js` 的交互式应用
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : `video` -> 音乐播放器 `demo`
-
+- [clock](https://github.com/Jinx-FX/webDesignCase/tree/main/clock) : 时钟 UI
 
 **布局和组件：**
 
