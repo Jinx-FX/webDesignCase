@@ -10,6 +10,8 @@
 - [Bankist-App](https://github.com/Jinx-FX/webDesignCase/tree/main/Bankist-App) : 基于原生 `js` 的交互式应用
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : `video` -> 音乐播放器 `demo`
 - [clock](https://github.com/Jinx-FX/webDesignCase/tree/main/clock) : 时钟 UI
+- [border-use-pie-charts](https://github.com/Jinx-FX/webDesignCase/tree/main/border-use-pie-charts) : border属性的研究和饼图的多种绘制
+
 
 **布局和组件：**
 

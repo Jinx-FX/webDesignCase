@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dynamic-pie-charts</title>
+  <style>
+    .pie,
+    .pie::before {
+      display: inline-block;
+      width: 0;
+      border-radius: 50%;
+      font-size: 0;
+    }
+
+    .pie span {
+      font-size: 1rem;
+      position: absolute;
+      color: #fff;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .pie {
+      position: relative;
+      border: solid 75px;
+      border-color: #3c7 #3c7 #37c #37c;
+      box-sizing: border-box;
+      transform: rotate(45deg);
+    }
+
+    .pie::before {
+      content: '';
+      position: absolute;
+      border: solid 75px;
+      border-color: #37c #37c transparent transparent;
+      transform: translate(-50%, -50%) rotate(.0turn);
+      animation: spine 10s linear infinite,
+        convex 10s step-end infinite;
+      animation-play-state: paused;
+      animation-delay: inherit;
+    }
+
+    @keyframes spine {
+      to {
+        transform: translate(-50%, -50%) rotate(1turn);
+      }
+    }
+
+    @keyframes convex {
+      50% {
+        border-color: transparent transparent #3c7 #3c7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- div 没有高宽，不能直接设置字体，可选择添加 span 在其中设置字体 -->
+  <div class="pie" style="animation-delay: -1s;"><span>10%</span></div>
+  <div class="pie" style="animation-delay: -2.5s;"><span>25%</span></div>
+  <div class="pie" style="animation-delay: -5s;"><span>50%</span></div>
+  <div class="pie" style="animation-delay: -8s;"><span>80%</span></div>
+</body>
+
+</html>
