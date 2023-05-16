@@ -12,6 +12,7 @@
 - [clock](https://github.com/Jinx-FX/webDesignCase/tree/main/clock) : 时钟 UI
 - [border-use-pie-charts](https://github.com/Jinx-FX/webDesignCase/tree/main/border-use-pie-charts) : border属性的研究和饼图的多种绘制
 - [components-packaging](https://github.com/Jinx-FX/webDesignCase/tree/main/components-packaging) : 从轮播图谈组件封装
+- [behaviorMode](https://github.com/Jinx-FX/webDesignCase/tree/main/behaviorMode) : 行为模式应用 >> 图片预览和选择
 
 
 **布局和组件：**
