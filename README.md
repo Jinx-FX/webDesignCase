@@ -31,6 +31,7 @@
 - [scratch_card](https://github.com/Jinx-FX/webDesignCase/tree/main/scratch_card) : `canvas` -> 刮刮乐小游戏
 - [website_background](https://github.com/Jinx-FX/webDesignCase/tree/main/website_background) : `canvas` -> 网页背景：随机粒子
 - [Slideshow](https://github.com/Jinx-FX/webDesignCase/tree/main/Slideshow) : `animation` -> 卡片自动轮播(3D)
+- [fadeub](https://github.com/Jinx-FX/webDesignCase/tree/main/fadein) : 常用动画实现技巧
 
 **结合第三方库：**
 

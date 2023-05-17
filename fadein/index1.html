@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字渐显</title>
+  <style>
+    #content1 {
+      display: inline-block;
+      padding: 5px;
+      border: solid 1px;
+      font-size: 1.5rem;
+      opacity: 0;
+      animation: fade-in 5s infinite;
+    }
+
+    @keyframes fade-in {
+      to {
+        opacity: 1
+      }
+    }
+
+    #content2 {
+      position: relative;
+      display: inline-block;
+      padding: 5px;
+      border: solid 1px;
+      font-size: 1.5rem;
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      animation: slide 2s forwards;
+    }
+
+    @keyframes slide {
+      to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content1">文字内容</div>
+  <div id="content2">文字内容</div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>描边动画</title>
+  <style>
+    svg polygon {
+      stroke: red;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      stroke-width: 5;
+      animation: stroke-path 5s linear infinite;
+    }
+
+    @keyframes stroke-path {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="500">
+    <g fill="none">
+      <polygon points="100,10 40,180 190,60 10,60 160,180">
+    </g>
+  </svg>
+</body>
+
+</html>
