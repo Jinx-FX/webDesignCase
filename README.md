@@ -11,8 +11,13 @@
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : `video` -> 音乐播放器 `demo`
 - [clock](https://github.com/Jinx-FX/webDesignCase/tree/main/clock) : 时钟 UI
 - [border-use-pie-charts](https://github.com/Jinx-FX/webDesignCase/tree/main/border-use-pie-charts) : border属性的研究和饼图的多种绘制
+
+
+**设计模式和编程思想：**
+
 - [components-packaging](https://github.com/Jinx-FX/webDesignCase/tree/main/components-packaging) : 从轮播图谈组件封装
 - [behaviorMode](https://github.com/Jinx-FX/webDesignCase/tree/main/behaviorMode) : 行为模式应用 >> 图片预览和选择
+- [watcher](https://github.com/Jinx-FX/webDesignCase/tree/main/watcher) : 监听属性改变 >> 数据驱动UI(响应式数据绑定)
 
 
 **布局和组件：**
