@@ -1,7 +1,7 @@
-// 中间人
+// 中介者模式 Mediator
 export default class PubSub {
   constructor() {
-    this.subscribers = {};
+    this.subscribers = {}
   }
 
   /*
@@ -9,9 +9,9 @@ export default class PubSub {
     @receiver 订阅者
     @fn 响应消息的处理函数
   */
-  sub(type, receiver, fn) {
-    this.subscribers[type] = this.subscribers[type] || [];
-    this.subscribers[type].push(fn.bind(receiver));
+  sub (type, receiver, fn) {
+    this.subscribers[type] = this.subscribers[type] || []
+    this.subscribers[type].push(fn.bind(receiver))
   }
 
   /*
@@ -19,10 +19,10 @@ export default class PubSub {
     @sender 派发消息者
     @data 数据，比如状态数据
   */
-  pub(type, sender, data) {
-    const subscribers = this.subscribers[type];
+  pub (type, sender, data) {
+    const subscribers = this.subscribers[type]
     subscribers.forEach((subscriber) => {
-      subscriber({type, sender, data});
-    });
+      subscriber({ type, sender, data })
+    })
   }
 }
