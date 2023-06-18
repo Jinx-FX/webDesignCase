@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/ptp.jpg">
+  <title>music_visualizing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: url(./assets/ptp.jpg) center;
+      background-size: cover;
+      backdrop-filter: blur(50px) grayscale(50%);
+    }
+
+    .music-box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ptp {
+      position: absolute;
+      top: 0;
+    }
+
+    .music-btn {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border: none;
+      outline: none;
+      background: url(./assets/ptp.jpg);
+      background-size: cover;
+      border-radius: 50%;
+      animation: music-btn-rotate 20s linear infinite;
+    }
+
+    .music-btn.rotate {
+      animation-play-state: paused;
+    }
+
+    @keyframes music-btn-rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="music-box">
+    <canvas class="ptp"></canvas>
+    <button class="music-btn rotate"></button>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

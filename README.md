@@ -11,6 +11,7 @@
 - [MusicPlayer](https://github.com/Jinx-FX/webDesignCase/tree/main/MusicPlayer) : `video` -> 音乐播放器 `demo`
 - [clock](https://github.com/Jinx-FX/webDesignCase/tree/main/clock) : 时钟 UI
 - [border-use-pie-charts](https://github.com/Jinx-FX/webDesignCase/tree/main/border-use-pie-charts) : border属性的研究和饼图的多种绘制
+- [music_visualizing](https://github.com/Jinx-FX/webDesignCase/tree/main/music_visualizing) : 音乐可视化
 
 
 **设计模式和编程思想：**
